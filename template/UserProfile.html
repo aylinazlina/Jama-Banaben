@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>UserProfile</title>
+  <style>
+    body {
+      background-color: #BCE4BC;
+      color: #3F7D7C;
+    }
+
+    .MyProfile {
+      color: var(--white_color);
+      font-family: var(--popins);
+    }
+
+    .MyProfileButton {
+      width: 100px;
+      height: 38px;
+      background-color: #DE73EF;
+
+      border: none;
+      border-radius: 5px;
+    }
+
+    .logout {
+      color: var(--white_color);
+      font-family: var(--popins);
+    }
+
+    .emp-profile {
+      padding: 3%;
+      margin-top: 3%;
+      margin-bottom: 3%;
+      border-radius: 0.5rem;
+      background: #fff;
+    }
+
+    .profile-img {
+      text-align: center;
+    }
+
+    .profile-img img {
+      width: 70%;
+      height: 100%;
+    }
+
+    .profile-img .file {
+      position: relative;
+      overflow: hidden;
+      margin-top: -20%;
+      width: 70%;
+      border: none;
+      border-radius: 0;
+      font-size: 15px;
+      background: #212529b8;
+    }
+
+    .profile-img .file input {
+      position: absolute;
+      opacity: 0;
+      right: 0;
+      top: 0;
+    }
+
+    .profile-head h5 {
+      color: #3F7D7C;
+      /* Changed color */
+    }
+
+    .profile-head h6 {
+      color: #3F7D7C;
+      /* Changed color */
+    }
+
+    .profile-edit-btn {
+      border: none;
+      border-radius: 1.5rem;
+      width: 70%;
+      padding: 2%;
+      font-weight: 600;
+      color: #6c757d;
+      cursor: pointer;
+    }
+
+    .proile-rating {
+      font-size: 12px;
+      color: #818182;
+      margin-top: 5%;
+    }
+
+    .proile-rating span {
+      color: #495057;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .profile-head .nav-tabs {
+      margin-bottom: 5%;
+    }
+
+    .profile-head .nav-tabs .nav-link {
+      font-weight: 600;
+      border: none;
+    }
+
+    .profile-head .nav-tabs .nav-link.active {
+      border: none;
+      border-bottom: 2px solid #0062cc;
+    }
+
+    .profile-work {
+      padding: 14%;
+      margin-top: -15%;
+    }
+
+    .profile-work p {
+      font-size: 12px;
+      color: #818182;
+      font-weight: 600;
+      margin-top: 10%;
+    }
+
+    .profile-work a {
+      text-decoration: none;
+      color: #495057;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .profile-work ul {
+      list-style: none;
+    }
+
+    .profile-tab label {
+      font-weight: 600;
+    }
+
+    .profile-tab p {
+      font-weight: 600;
+      color: #0062cc;
+    }
+  </style>
+  <!-- =================== Google fonts CDN Link ===== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- =================== Google fonts CDN Link ===== -->
+
+
+  <!-- ========= fontawesome ===============-->
+  <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+    href="/css/app-wa-3b124ff0e0d7a67cd8c995d0aeb1d15a.css?vsn=d">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+
+  <!-- ===================== bootstrap CDN Link ======= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- ===================== bootstrap CDN Link ======= -->
+  <!-- ========= fontawesome ===============-->
+
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+  <!--=========================================navbar================-->
+  <nav class="navbar navbar-expand-lg ourCustomNav">
+    <div class="container">
+      <!-- ========== logo ======= -->
+      <a class="navbar-brand" href="#">
+        <picture>
+          <img src="../static/images/ARS_logo.png" alt="../static/images/ARS_logo.png" class="logo">
+        </picture>
+        <p class="JamaBanaben">জামা বানাবেন?</p>
+      </a>
+
+      <!-- ========== logo ======= -->
+      <!-- ============== toggler button ============== -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- ============== toggler button ============== -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="CustomNavItem" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="CustomNavItem dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu CustomeDDMenu ">
+              <li><a class="dropdown-menu__Item" href="{% url 'women' %}">Women</a></li>
+              <li><a class="dropdown-menu__Item" href="{% url 'men' %}">Men</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="CustomNavItem" href="{% url 'designer' %}">Designer</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="CustomNavItem" href="{% url 'cart' %}">Cart</a>
+
+          </li>
+          <li class="nav-item">
+            <a class="CustomNavItem" href="{% url 'orders' %}">Orders</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="CustomNavItem" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+
+
+        </ul>
+
+        <a href="{% url 'loginPage' %}" class="NavbarLoginSignUpButton">
+            log in/Sign Up
+          </a>
+
+        <span>{{request.user}}</span>
+        <span><a class="logout" href="{% url 'logoutuser' %}">Logout</a></span>
+      </div>
+      <div>
+
+        <span class="badge badge-pill badge-danger notify">{{request.user.profile.get_cart_count}}</span>
+
+      </div>
+      <button class="MyProfileButton"><a class="MyProfile" href="{% url 'userProfile' %}">My profile</a>
+      </button>
+
+    </div>
+  </nav>
+
+  <!--=====================================  Profile ===================-->
+  <div class="container emp-profile">
+    <form method="post">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img src="{{ profile.picture.url }}" alt="" />
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>{{ profile.name }}</h5>
+            <br>
+
+
+
+            <div class="col-md-8">
+              <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Name</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{ profile.name }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>User Name</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{ user.username }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Email</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{ user.email }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>About Me</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{ profile.about_myself }}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>NID</label>
+                    </div>
+                    <div class="col-md-6">
+                      <p>{{ profile.nid }}</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Contact Number</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{ profile.contact_no }}</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Address</label>
+                  </div>
+                  <div class="col-md-6">
+                    <p>{{ profile.address }}</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <a href="{% url 'edit_profile' %}" class="profile-edit-btn">Edit Profile</a><a href="{% url 'profileForm' %}"
+            class="profile-edit-btn">/add Profile details</a>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+
+  </div>
+
+  </form>
+  </div>
+
+  <!-- ===================== bootstrap CDN Link ======= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- ===================== bootstrap CDN Link ======= -->
+</body>
+
+</html>
