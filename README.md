@@ -1,6 +1,6 @@
 # JamaBanaben
 
-A metarial based web platform with some additional features.
+A metarial based e-commerce platform with some additional features.
 
 
 ##  Framework
@@ -60,6 +60,12 @@ python manage.py migrate
 
 10.Start the development server: python manage.py runserver
 Access the website at ( http://127.0.0.1:8000/)
+
+## UI Design -Figma
+
+https://www.figma.com/design/bXoJ7JONCVerQF0oDg1dyn/ARS-Website_1?node-id=0-1&t=fSHU0pdb809XliSN-1
+
+
 ## Found a bug?
 
 Contributions are welcome! If you'd like to contribute to Jamabanaben and help me, please follow these steps:
