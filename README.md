@@ -19,7 +19,7 @@ Django
 Jamabanaben is a user-friendly website that mainly focuses on clothing materials. However, it also offers some products for men and women.
 ## Watch Demonstration Video
 
-youtube -https://youtu.be/U_QNZiciCps
+youtube -https://www.youtube.com/watch?v=m9Jzo0wkdrI
 ## Features
 1.Online clothing material platform.
 
